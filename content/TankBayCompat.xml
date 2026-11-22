@@ -1,0 +1,41 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<Assets>
+  <Part Id="TesseraTankA_Prefab_SphereTankA" Modify="PatchIfExists">
+    <Connectors Modify="Extend">
+      <Connector Key="_connector01Foot" Modify="Patch">
+        <Transform Modify="Patch">
+          <Scale X="0.25" Y="0.25" Z="0.25" />
+        </Transform>
+      </Connector>
+      <Connector Key="_connector02Equator" Modify="Patch">
+        <Transform Modify="Patch">
+          <Scale X="0.25" Y="0.25" Z="0.25" />
+        </Transform>
+      </Connector>
+    </Connectors>
+  </Part>
+  <Part Id="CoreFuelTankA_Prefab_RadialMPQuarterWA" Modify="Patch">
+    <Connectors Modify="Extend">
+      <Connector Key="NodeLockBayPosZ">
+        <Transform>
+          <Position Z="0.15" />
+          <Rotation Y="-1.570796326794897" />
+          <Scale X="0.25" Y="0.25" Z="0.25" />
+        </Transform>
+        <Capabilities>BulkFluid</Capabilities>
+      </Connector>
+    </Connectors>
+  </Part>
+  <Part Id="CoreFuelTankA_Prefab_RadialMPHalfWA" Modify="Patch">
+    <Connectors Modify="Extend">
+      <Connector Key="SurfaceMount" Modify="Replace">
+        <Transform>
+          <Position Z="0.325" />
+          <Rotation Y="-1.570796326794897" />
+          <Scale X="0.25" Y="0.25" Z="0.25" />
+        </Transform>
+        <Capabilities>BulkFluid</Capabilities>
+      </Connector>
+    </Connectors>
+  </Part>
+</Assets>

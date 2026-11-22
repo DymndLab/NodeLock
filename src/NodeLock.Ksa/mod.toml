@@ -1,0 +1,8 @@
+name = "NodeLock"
+assets = [ "BatteryBayCompat.xml", "TankBayCompat.xml" ]
+[StarMap]
+EntryAssembly = "NodeLock.Ksa"
+
+[[StarMap.ModDependencies]]
+ModId = "PurrlineTessera"
+Optional = true

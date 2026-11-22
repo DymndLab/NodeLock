@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Assets>
+  <!-- Connector size only. Keep the existing position, rotation and battery properties. -->
+  <Part Id="CoreElectricalA_Prefab_RadialBatterySmallV1A" Modify="Patch">
+    <Connectors Modify="Extend">
+      <Connector Key="_connector3" Modify="Patch">
+        <Transform Modify="Patch">
+          <Scale X="0.25" Y="0.25" Z="0.25" />
+        </Transform>
+      </Connector>
+    </Connectors>
+  </Part>
+  <Part Id="CoreElectricalA_Prefab_RadialBatteryMediumV1A" Modify="Patch">
+    <Connectors Modify="Extend">
+      <Connector Key="_connector4" Modify="Patch">
+        <Transform Modify="Patch">
+          <Scale X="0.25" Y="0.25" Z="0.25" />
+        </Transform>
+      </Connector>
+    </Connectors>
+  </Part>
+</Assets>

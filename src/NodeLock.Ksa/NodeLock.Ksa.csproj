@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><TreatWarningsAsErrors>true</TreatWarningsAsErrors><GameDir Condition="'$(GameDir)'==''">G:/Program Files/Ahwoo/Games/Kitten Space Agency</GameDir><LoaderDir Condition="'$(LoaderDir)'==''">$(MSBuildThisFileDirectory)../../../.tools/starmap-0.5.4/release</LoaderDir></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../NodeLock.Core/NodeLock.Core.csproj" />
+    <Reference Include="$(GameDir)/KSA.dll" Private="false" />
+    <Reference Include="$(GameDir)/BepuUtilities.dll" Private="false" />
+    <Reference Include="$(GameDir)/Brutal.*.dll" Private="false" />
+    <Reference Include="$(GameDir)/Planet.*.dll" Private="false" />
+    <Reference Include="$(LoaderDir)/StarMap.API.dll" Private="false" />
+    <Reference Include="$(LoaderDir)/0Harmony.dll" Private="false" />
+  </ItemGroup>
+</Project>

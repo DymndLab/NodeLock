@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework><OutputType>Exe</OutputType><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <LoaderDir Condition="'$(LoaderDir)'==''">$(MSBuildThisFileDirectory)../../../.tools/starmap-0.5.4/release</LoaderDir>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/NodeLock.Core/NodeLock.Core.csproj"/><Reference Include="0Harmony"><HintPath>$(LoaderDir)/0Harmony.dll</HintPath></Reference></ItemGroup>
+</Project>
