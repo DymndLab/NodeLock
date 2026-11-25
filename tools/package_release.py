@@ -3,11 +3,11 @@ from pathlib import Path
 import hashlib, zipfile
 
 root=Path(__file__).resolve().parents[1]
-stage=root/'artifacts/0.1.0/NodeLock'
-release=root/'release'
-release.mkdir(exist_ok=True)
+stage=root/'artifacts/0.1.1/NodeLock'
+release=root/'release/0.1.1'
+release.mkdir(parents=True, exist_ok=True)
 names=['NodeLock.Ksa.dll','NodeLock.Core.dll','NodeLock.Ksa.deps.json','mod.toml','BatteryBayCompat.xml','TankBayCompat.xml','LICENSE']
-archive=release/'NodeLock-0.1.0.zip'
+archive=release/'NodeLock-0.1.1.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
     for name in names:
         z.write(stage/name,'NodeLock/'+name)

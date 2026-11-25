@@ -15,14 +15,14 @@ AssemblyLoadContext.Default.Resolving += (_, n) =>
     return null;
 };
 var path=Path.Combine(game,"KSA.dll");
-if(Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))) != "170C28AA34845026195C89A23C0F3C241DB00EA4A8B86EF60EC097C32A7F8A39") throw new Exception("Uninspected KSA build");
+if(Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))) != "FA741419E287FB7F673FBA3212BE622B5FC27DB91FA4A6632828FB9DA7B15C7E") throw new Exception("Uninspected KSA build");
 var assembly=AssemblyLoadContext.Default.LoadFromAssemblyPath(path);
 var editor=assembly.GetType("KSA.VehicleEditor",true)!;
 foreach(var instruction in PatchProcessor.GetOriginalInstructions(AccessTools.Method(assembly.GetType("KSA.ImGuiBackendGlfwImpl",true)!,"OnKey")))
     if(instruction.operand is MethodInfo method && method.Name.Contains("KeyEvent"))Console.WriteLine("Input call: "+method.DeclaringType+" "+method);
 var resolve=AccessTools.Method(editor,"ResolveSnapTarget");
 if(resolve.ReturnType.Name!="SnapTarget" || resolve.GetParameters().Length!=3) throw new Exception("Unexpected signature");
-var owner=new Harmony("nodelock.probe.5901");
+var owner=new Harmony("nodelock.probe.5949");
 try
 {
     owner.Patch(resolve,transpiler:new HarmonyMethod(typeof(Bridge),nameof(Bridge.Transpile)));
@@ -71,7 +71,7 @@ if(args.Length>1)
     try
     {
         type.GetMethod("Load")!.Invoke(mod,null);
-        var patches=Harmony.GetAllPatchedMethods().Count(m=>Harmony.GetPatchInfo(m)?.Owners.Contains("nodelock.hover.5901")==true);
+        var patches=Harmony.GetAllPatchedMethods().Count(m=>Harmony.GetPatchInfo(m)?.Owners.Contains("nodelock.hover.5949")==true);
         Check(patches==14,"all fourteen locking/runtime patches installed");
         type.GetMethod("ProbeNativeSeat")!.Invoke(null,null);
         Console.WriteLine("PASS actual native SeatStack and SnapTarget construction");
@@ -79,7 +79,7 @@ if(args.Length>1)
         Console.WriteLine("PASS runtime recovery/stale-preview/implicit-commit guards and claimed Tab UI suppression");
     }
     finally { type.GetMethod("Unload")!.Invoke(mod,null); }
-    Check(!Harmony.GetAllPatchedMethods().Any(m=>Harmony.GetPatchInfo(m)?.Owners.Contains("nodelock.hover.5901")==true),"hover runtime cleanup");
+    Check(!Harmony.GetAllPatchedMethods().Any(m=>Harmony.GetPatchInfo(m)?.Owners.Contains("nodelock.hover.5949")==true),"hover runtime cleanup");
 }
 static void Check(bool pass,string label){if(!pass)throw new Exception(label);Console.WriteLine("PASS "+label);}
 public static class Bridge

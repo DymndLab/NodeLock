@@ -14,8 +14,8 @@ namespace NodeLock.Ksa;
 [StarMapMod]
 public sealed partial class NodeLockMod
 {
-    public const string Owner = "nodelock.hover.5901";
-    public const string Version = "0.1.0";
+    public const string Owner = "nodelock.hover.5949";
+    public const string Version = "0.1.1";
     private Harmony? harmony;
     private static bool enabled;
     private static VehicleEditor? editor;
@@ -47,7 +47,7 @@ public sealed partial class NodeLockMod
         try
         {
             var hash = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(typeof(VehicleEditor).Assembly.Location)));
-            if(hash != "170C28AA34845026195C89A23C0F3C241DB00EA4A8B86EF60EC097C32A7F8A39") throw new NotSupportedException("Requires inspected KSA 5901");
+            if(hash != "FA741419E287FB7F673FBA3212BE622B5FC27DB91FA4A6632828FB9DA7B15C7E") throw new NotSupportedException("Requires inspected KSA 5949");
             if (Looking?.PropertyType != typeof(bool)) throw new MissingMemberException("IsFreeCameraLooking");
             var ring = AccessTools.Method(typeof(VehicleEditor), "DrawConnectorRing");
             if (ring == null || ring.GetParameters().Length != 6 || ring.GetParameters()[4].ParameterType != typeof(double4)) throw new MissingMethodException("DrawConnectorRing signature");

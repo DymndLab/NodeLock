@@ -15,9 +15,9 @@ Yellow marks the destination node; cyan marks the carried part's connector. If a
 
 ## Installation
 
-[Download latest release](https://github.com/DymndLab/NodeLock/releases/latest).
+[Download the 0.1.1 build](release/0.1.1/NodeLock-0.1.1.zip) or view [published releases](https://github.com/DymndLab/NodeLock/releases).
 
-Requires **KSA 2026.11.16.5901** and **StarMap 0.5.4+**. Windows supported; Linux and macOS unverified. Other game builds are not supported by this release.
+NodeLock 0.1.1 targets **KSA 2026.11.25.5949** and **StarMap 0.5.4+**. Build and native probes verified on Windows. The Windows Borea editor smoke test received a positive user report. Symmetry inheritance and save/reload are still unconfirmed. Linux and macOS are unverified. Other game builds are not supported by this release.
 
 Close KSA, extract the `NodeLock` folder into your active profile's `mods` folder, enable it in the mod manifest/manager, and launch with StarMap. In Borea, use the selected instance's mods folder. Load NodeLock after Core and after PurrlineTessera if installed.
 
